@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public Text winLoseText;
+    public Image winLoseBG;
     public Text scoreText;
     public Text healthText;
     public float speed = 5f;
@@ -50,7 +52,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Goal"))
         {
-            Debug.Log("You win!");
+            ///Debug.Log("You win!");
+            winLoseText.text = "You Win!";
+            winLoseText.color = Color.black;
+            winLoseBG.color = Color.green; 
         }
     }
     private void Update()
