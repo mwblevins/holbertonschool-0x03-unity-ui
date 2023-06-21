@@ -68,7 +68,10 @@ public class PlayerController : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game Over!");
+        winLoseText.text = "Game Over!";
+        winLoseText.color = Color.white;
+        winLoseBG.color = Color.red;
+        //Debug.Log("Game Over!");
         score = 0;
         health = 5;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
