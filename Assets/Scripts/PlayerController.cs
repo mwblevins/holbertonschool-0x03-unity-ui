@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public Text scoreText;
+    public Text healthText;
     public float speed = 5f;
     private int score = 0;
     public int health = 5;
@@ -39,7 +40,8 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("Trap"))
         {
             health--;
-            Debug.Log("Health: " + health);
+            SetHealthText();
+            //Debug.Log("Health: " + health);
 
             if (health <= 0)
             {
@@ -70,5 +72,10 @@ public class PlayerController : MonoBehaviour
     public void SetScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void SetHealthText()
+    {
+        healthText.text = "Health: " + health.ToString();
     }
 }
