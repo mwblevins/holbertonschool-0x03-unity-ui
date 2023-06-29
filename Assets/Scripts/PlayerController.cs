@@ -66,6 +66,10 @@ public class PlayerController : MonoBehaviour
         {
             GameOver();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadMenuScene();
+        }
     }
 
     private void GameOver()
@@ -97,5 +101,10 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void LoadMenuScene()
+    {
+        SceneManager.LoadScene("menu");
     }
 }
