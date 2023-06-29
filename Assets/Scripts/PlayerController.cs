@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
             winLoseText.text = "You Win!";
             winLoseText.color = Color.black;
             winLoseBG.color = Color.green;
+            winLoseBG.gameObject.SetActive(true);
 
             StartCoroutine(LoadScene(3)); 
         }
@@ -80,6 +81,8 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Game Over!");
         score = 0;
         health = 5;
+
+        winLoseBG.gameObject.SetActive(true);
 
         SetScoreText();
         SetHealthText();
